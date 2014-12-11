@@ -1,0 +1,35 @@
+include <bits/stdc++.h>
+using namespace std;
+long int a,b,reva,revb,sum,revsum;
+int main() {
+	int n,ctr=0;
+	cin>>n;
+	while(n--){
+		reva=0;
+		revb=0;
+		sum=0;
+		ctr=0;
+		revsum=0;
+		cin>>a>>b;
+		while(a!=0){
+			reva=reva*10+a%10;
+			a=a/10;
+		}
+		while(b!=0){
+	
+			revb=revb*10+b%10;
+			b=b/10;
+		}
+		sum=reva+revb;
+			while(sum!=0){
+	
+			revsum=revsum*10+sum%10;
+			sum=sum/10;
+		}
+		cout<<revsum <<'\n';
+		}
+	
+	// your code goes here
+	return 0;
+}  
+		 
