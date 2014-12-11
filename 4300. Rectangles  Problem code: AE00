@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	long n,ctr=0;
+	cin>>n;
+	for(long i=1;i<=n;i++){
+		for(long j=1;j<=floor(sqrt(i));j++){
+			if(i%j==0){
+				ctr++;
+			}
+		}
+	}
+	cout<<ctr<<endl;
+	// your code goes here
+	return 0;
+}
