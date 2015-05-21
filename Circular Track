@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long int gcd(long long int m,long long int n){
+	if(m < 0) m = -m;
+    if(n < 0) n = -n;
+ 
+    int r;
+    while(n) {
+        r = m % n;
+        m = n;
+        n = r;
+    }
+    return m;
+ 
+ 
+ 
+	}
+int main() {
+	long long int a,b,t,m,n,r;
+	cin>>t;
+	while(t--){
+		cin>>a>>b;
+		cout<<abs(a-b)/gcd(a,b)<<endl;
+	}
+	// your code goes here
+	return 0;
+}
