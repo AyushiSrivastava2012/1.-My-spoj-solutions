@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+ 
+int prec(char c){
+	int p;
+		switch(c){
+			case'(':p=0; break;
+			case '*':p=3;break;
+			case '/':p=4;break;
+			case '^':p=5 ; break;
+			case '+':p=1;break;
+			case '-':p= 2; break;
+ 
+		}
+		return p;
+		}
+int main() {
+	int t,i,top,l;
+	cin>>t;
+	while(t--){
+//		cout<<"?1"<<'\n';
+	char a[401],stack[401];
+	cin>>a;
+	l=strlen(a);
+	i=0;
+	top=-1;
+	while(i<l){
+//			cout<<"?2"<<'\n';
+		if((a[i]>='a'&& a[i]<='z')||(a[i]>='A'&& a[i]<='Z'))
+		{
+			cout<<a[i];
+			i++;
+//				cout<<"?3"<<'\n';
+		}
+		else{
+			if(a[i]=='('){
+				stack[++top]=a[i++];
+//					cout<<"?4"<<'\n';
+			}
+			else if (a[i]==')'){
+//					cout<<"?5"<<'\n';
+				while(top!=-1 && stack[top]!='('){
+					cout<<stack[top--];	//cout<<"?6"<<'\n';
+				}
+				if(top!=-1){
+					top--;
+					//	cout<<"?7"<<'\n';
+				}
+				i++;
+			}
+			else if(top == -1 ||prec(stack[top])<prec(a[i])){
+				stack[++top]=a[i++];
+				//	cout<<"?8"<<'\n';
+			}
+			else if(prec(stack[top])>=prec(a[i])){
+				while(top!=-1 &&prec(stack[top])>=prec(a[i])){
+					cout<<stack[top--];
+				}
+				stack[++top]=a[i++];//	cout<<"?8"<<'\n';
+			}
+		}// end of else
+ 
+	}//end of while
+ 
+	while(top!=-1){
+		cout<<stack[top--];
+	}
+	cout<<'\n';
+	}
+	return 0;
+} 
