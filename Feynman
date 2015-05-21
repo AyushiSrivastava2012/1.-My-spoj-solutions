@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+ 
+int main() {
+	long long int m;
+	long n;
+	cin>>n;
+	while(n!=0){
+		m=(n*(n+1)*((2*n)+1))/6;
+		cout<<m<<endl;
+			cin>>n;
+	}
+	// your code goes here
+	return 0;
+}
