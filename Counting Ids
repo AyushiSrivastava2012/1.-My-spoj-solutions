@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long int powq(long long int n,long long int p){
+	long long int res=1,b=0;
+	while(p!=0){
+		res=(res*n)%1000000007;
+		b=(b+res)%1000000007;
+	//	cout<<p<<" "<<res<<endl;
+		p--;
+	}
+	return b;
+	}	
+int main() {
+	long long int n,p,k;
+	scanf("%lld%lld",&n,&p);
+	while(n!=0 && p!=0){
+	//	cout<<powq(n,p)<<endl;
+	//	k=(n*(-1))%1000000007;
+		printf("%lld\n",powq(n,p));
+		scanf("%lld%lld",&n,&p);
+	}
+	// your code goes here
+	return 0;
+}
