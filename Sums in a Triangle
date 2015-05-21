@@ -1,0 +1,4 @@
+#include<iostream>
+#define _ std::
+int t,n,i,j; main(){_ cin>>t;while(t--){_ cin>>n; int v[101][101]={},x=1;
+for(i=1;i<=n;i++)for(j=1;j<=i;j++){_ cin>>v[i][j];v[i][j]+=_ max(v[i-1][j],v[i-1][j-1]);if(x<v[i][j])x=v[i][j];}_ cout<<x<<'\n';}}
