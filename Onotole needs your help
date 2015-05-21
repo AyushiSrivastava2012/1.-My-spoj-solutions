@@ -1,0 +1,13 @@
+#include <stdio.h>
+ 
+int main(void) {
+	long long int n,t,p=0;
+	scanf("%lld",&n);
+	while(n--){
+		scanf("%lld",&t);
+		p=p^t;
+	}
+	printf("%lld\n",p);
+	// your code goes here
+	return 0;
+}
