@@ -1,0 +1,20 @@
+s=raw_input().split()
+a=int(s[0])
+d=int(s[1])
+b=[]
+c=[]
+while a!=0 and d!=0:
+	str_arr=raw_input().split(' ')
+	b=[int(num) for num in str_arr]
+	str_arr=raw_input().split(' ')
+	c=[int(num) for num in str_arr]
+	c.sort()
+	b.sort()
+	flag=1
+	if b[0] < c[1] :
+			print 'Y'
+	else:
+		print 'N'
+	s=raw_input().split()
+	a=int(s[0])
+	d=int(s[1])
