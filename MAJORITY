@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+ inline int read(){
+    char c=getchar_unlocked();
+    int n=0;
+    while(!(c>='0' && c<='9'))
+     c=getchar_unlocked();
+    while(c>='0' && c<='9'){
+     n=n*10 + (c-'0');
+    c=getchar_unlocked();
+}
+return n;
+} 
+ 
+int main() {
+	long long int t,temp;
+	t=read();
+	while(t--){
+		std::multimap<long long int,long long int>mymap;
+  		std::multimap<long long int,long long int>::iterator it;
+		long long int i,n,temp;
+		n=read();
+		for(i=0;i<n;i++){
+			temp=read();
+			it=mymap.find(temp);
+			if( it == mymap.end() ){ 
+			mymap.insert( make_pair(temp,1) );
+  			}
+  			else{
+			it->second++;
+			}
+		}
+		int flag=0;
+		for(it=mymap.begin();it!=mymap.end();it++){
+			if(it->second>(n/2)){
+				cout<<"YES "<<(it->first)<<endl;
+				flag=1;
+				break;
+			}
+		}
+		if (flag==0){
+			cout<<"NO"<<endl;
+		}
+	}
+	return 0;
+}
