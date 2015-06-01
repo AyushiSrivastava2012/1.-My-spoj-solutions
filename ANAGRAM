@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+	long long int t;
+	cin>>t;
+	while(t--){
+    multimap<char,long int>m1,m2;
+    std::multimap<char,long int>::iterator it1,it2;
+    char s1[21],s2[21];
+    cin>>s1>>s2;
+    char d='a';
+    for(int i=0;i<26;i++){
+        m1.insert(pair<char,int>(d,0));
+        m2.insert(pair<char,int>(d,0));
+        d++;
+    }
+    for(long int i=0;i<strlen(s1);i++){
+        it1=m1.find(s1[i]);
+        it1->second++;
+    }
+    for(long int i=0;i<strlen(s2);i++){
+        it2=m2.find(s2[i]);
+        it2->second++;
+    }
+    int flag=0;
+    for(it1=m1.begin(),it2=m2.begin();it1!=m1.end();it1++,it2++){
+        if(it1->second!=it2->second){
+            flag=1;
+        }
+    }
+    if(flag==0)
+    cout<<"YES"<<endl;
+    else{
+    	cout<<"NO"<<endl;
+    }
+	}
+    return 0;
+}
